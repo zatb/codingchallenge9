@@ -10,9 +10,16 @@ document.addEventListener('DOMContentLoaded', function() {
         .append('div')
         .attr('class', 'data-point');
 
-    // Attach event listeners for "mouseover" and "mouseout" to change the div elements' styles on hover and revert them when the mouse moves away.
+// Attach event listeners for "mouseover" and "mouseout" to change the div elements' styles on hover and revert them when the mouse moves away.
     divs.on('mouseover', function(event, d) {
-        })
-        .on('mouseout', function(event, d) {
-        });
+        
+     // On "mouseover", change the div's background color to a more vibrant one (e.g., "firebrick").
+        d3.select(this).style('background-color', 'firebrick');
+    })
+// Attach event listeners for "mouseover" and "mouseout" to change the div elements' styles on hover and revert them when the mouse moves away.
+    .on('mouseout', function(event, d) {
+
+        // On "mouseout", revert the div's background color to its original state.
+        d3.select(this).style('background-color', 'gray');
+    });
 });
